@@ -1,42 +1,56 @@
-geek = 'GEEKSFORGEEKS'
-s = [1,2,3,4,5,6]
-for i in range(0,len(geek)):
-	print(geek[i])
+# import module lớp trừu tượng
+from abc import ABC, abstractmethod 
+  
+# tạo ra một lớp mẹ đa giác nói chung
+class Polygon(ABC): 
+  
+    # abstract method 
+    def noofsides(self): 
+        #placeholder
+        pass
 
-s = [1,2,3,4,5,6]
-nS = len(s)
-del s[0] 
-print(s)
+# lớp con tam giác  
+class Triangle(Polygon): 
+  
+    # viết thuộc tính riêng kế thừa từ hàm noofsides
+    # overriding abstract method 
+    def noofsides(self): 
+        print("I have 3 sides") 
 
-s.pop(1)
-print(s)
+# lớp con ngũ giác 
+class Pentagon(Polygon): 
+    
+    # viết thuộc tính riêng cho ngũ giác
+    # overriding abstract method 
+    def noofsides(self): 
+        print("I have 5 sides") 
+ 
+ # lớp con lục giác  
+class Hexagon(Polygon): 
+    
+    # viết thuộc tính riêng cho lục giác
+    # overriding abstract method 
+    def noofsides(self): 
+        print("I have 6 sides") 
+  
+# lớp con tứ giác 
+class Quadrilateral(Polygon): 
+    
+    # viết thuộc tính riêng cho tứ giác
+    # overriding abstract method 
+    def noofsides(self): 
+        print("I have 4 sides") 
 
-s.clear()
-print(s)
-
-for i in range(0,nS): s.append(i)
-print(s)
-
-s.reverse()
-print(s)
-
-s.insert(3,4)
-s.sort()
-print(s)
-
-tup = (0,1,2,3,4,5)
-for i in range(0,len(tup)):
-	print(tup[i])
-
-print(tup[1:])
-print(tup[:])
-print(tup[2:4])
-print(tup[:4])
-print(tup[-2])
-
-ls = [0,1,2,3,4,5]
-print(ls[1:])
-print(ls[:])
-print(ls[2:4])
-print(ls[:4])
-print(ls[-2])
+# định nghĩa theo class 
+# Driver code 
+R = Triangle() 
+R.noofsides() 
+  
+K = Quadrilateral() 
+K.noofsides() 
+  
+R = Pentagon() 
+R.noofsides() 
+  
+K = Hexagon() 
+K.noofsides()
